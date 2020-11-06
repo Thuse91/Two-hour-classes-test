@@ -1,4 +1,4 @@
-
+//the initial parent class
 class Person {
     constructor(Name, Age, Height, WhereDoTheyLive, Hobby) {
         this.Name = Name;
@@ -8,7 +8,7 @@ class Person {
         this.Hobby = Hobby;
     }
 }
-
+//a child class of Person
 class PersonInTwoYears extends Person {
     constructor(Name, Age, Height, WhereDoTheyLive, Hobby, JsExperience, WorksAt) {
     super(Name, Age, Height, WhereDoTheyLive, Hobby); {
@@ -19,6 +19,7 @@ class PersonInTwoYears extends Person {
     }
 }
 
+//a child class of PersonInTwoYears
 class PersonInFourYears extends PersonInTwoYears {
     constructor(Name, Age, Height, WhereDoTheyLive, Hobby, JsExperience, WorksAt) {
     super(Name, Age, Height, WhereDoTheyLive, Hobby, JsExperience, WorksAt); {
@@ -28,14 +29,20 @@ class PersonInFourYears extends PersonInTwoYears {
 }
 }
 
+// creating variables with the info to be displayed.
+
 let meNow = new Person ("Jimmy", 29, 183 + "cm", "Bjuv", "Computers");
-let meInTwo = new PersonInTwoYears("Jimmy", 31, 183 + " cm", "Bjuv", "Computers", 2 , "BigCorp");
+let meInTwo = new PersonInTwoYears(meNow.Name, meNow.Age + 2, meNow.Height, "Bjuv", "Computers", 2 , "BigCorp");
 let meInFour = new PersonInFourYears("Jimmy", 33, 183 + " cm", "Helsingborg", "Programming", 4 , "EvenBiggerCorp");
 console.log(meNow);
 console.log(meInTwo);
 console.log(meInFour);
 
+// let meInTwo = new PersonInTwoYears(meNow.Name, meNow.Age + 2, meNow.Height, "Bjuv", "Computers", 2 , "BigCorp");
+// is another way i could do it.
 
+
+// styling body of index.
 const body = document.querySelector("body");
 body.style.backgroundColor = "#c7d9ff";
 body.style.color = "white";
@@ -93,7 +100,7 @@ containerNow.appendChild(hobby)
 document.querySelector("#hobby").innerHTML = "Hobby: " + meNow.Hobby;
 
 
-
+//creating container for data on PersonInTwoYears
 
 const containerTwoYears = document.createElement("div");
 containerTwoYears.setAttribute("class", "container");
@@ -158,6 +165,7 @@ containerTwoYears.appendChild(worksat2022)
 document.querySelector("#worksat2022").innerHTML = "Working at: " + meInTwo.WorksAt; 
 
 
+//creating container for data on PersonInFourYears
 
 const containerFourYears = document.createElement("div");
 containerFourYears.setAttribute("class", "container");
